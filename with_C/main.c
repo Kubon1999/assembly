@@ -5,6 +5,7 @@ void liczba_przeciwna(int *a);
 void odejmij_jeden(int** a);
 void przestaw(int tab1[], int n);
 int dot_product(int tab1[], int tab2[], int n);
+int* merge(int tab1[], int tab2[], int n);
 
 int main()
 {
@@ -54,6 +55,7 @@ int main()
 	for (int i = 0; i < n; i++) {
 		printf("2:%d\n", tab[i]);
 	}*/
+
 	int n;
 	printf("podaj n: ");
 	scanf("%d", &n);
@@ -77,9 +79,11 @@ int main()
 	for (int i = 0; i < n; i++) {
 		printf("(tab1)(tab2) %d: %d %d\n", i, tab1[i], tab2[i]);
 	}
-
+	/* 
 	int wynik = dot_product(tab1, tab2, n);
-
-	printf("wynik: %d", wynik);
-
+	*/
+	int* res = merge(tab1, tab2, n);
+	for (int i = 0; i < 2*n; i++) {
+		printf("merge[ %d ]: %d\n", i, res[i]);
+	}
 }
