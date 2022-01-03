@@ -5,3 +5,6 @@ IEEE754_related/.gitignore.txt
 IEEE754_related/IEEE754_related/IEEE754_related.vcxproj
 *.filters
 IEEE754_related/IEEE754_related/IEEE754_related.vcxproj.user
+*.sln
+*.vcxproj
+*.user
