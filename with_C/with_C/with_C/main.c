@@ -2,6 +2,7 @@
 #include <stdio.h>
 double ciag(unsigned int* x);
 float* XYZ2R(float* tablCIEXYZ, int n);
+char* spaces(char znak);
 int main()
 {
 	/* 
@@ -26,11 +27,21 @@ int main()
 		-function returns address to allocated array of size n that stores sums of the 3 next elements from tablCIEXYZ
 		-function sums the 3 elements with this equation: 3.064*x - 1.393*y - 0.475*z
 	*/
+	/*
 	int n = 3;
 	float arr[3 * 3] = { 1,2,3,4,5,6,7,8,9 };
 	float* wynik = XYZ2R(arr, n);
 	printf("%f", wynik[0]);
 	printf("%f", wynik[1]);
 	printf("%f", wynik[2]);
+	*/
+
+	/* fill memory of size 129 with ( char, 127 spaces, 1 zero )
+	
+	
+	*/
+	char znak = 'a';
+	char* znaki = "asdfdsfsf";
+	char* w = spaces(znak);
 	return 0;
 }
