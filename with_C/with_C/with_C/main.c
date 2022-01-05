@@ -3,6 +3,7 @@
 double ciag(unsigned int* x);
 float* XYZ2R(float* tablCIEXYZ, int n);
 char* spaces(char znak);
+void* palindrom(wchar_t* tekst);
 int main()
 {
 	/* 
@@ -40,8 +41,12 @@ int main()
 	
 	
 	*/
-	char znak = 'a';
+	/*char znak = 'a';
 	char* znaki = "asdfdsfsf";
 	char* w = spaces(znak);
+	*/
+	//find all palindromes in text and safe its effective address and lengt
+	int* wsk = palindrom("kuba");
+	
 	return 0;
 }
