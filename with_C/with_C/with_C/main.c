@@ -46,7 +46,8 @@ int main()
 	char* w = spaces(znak);
 	*/
 	//find all palindromes in text and safe its effective address and lengt
-	int* wsk = palindrom("kuba");
-	
+	//returns address to table that contains: (address where starts the palindrome, length of palindrome)
+	int* wsk = palindrom("kajak");
+
 	return 0;
 }

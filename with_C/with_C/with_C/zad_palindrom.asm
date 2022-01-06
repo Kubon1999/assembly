@@ -2,8 +2,6 @@
 .model flat
 public _palindrom
 extern _malloc : PROC
-.data
-	temp db 100
 .code
 _palindrom PROC
 	
@@ -12,48 +10,57 @@ _palindrom PROC
 	push ebx
 	push esi
 	push edi
-	sub esp,4 ;adres na dlugosc teksty
-	;0 ebp
-	;4 call
-	;8 tekst
 
-
-	mov esi, [ebp+8]
-	;sprawdzmy jakie jest n
-	mov ecx, 0
+	mov ebx, [ebp+8]
+	mov ecx,0
 	lp:
-		mov al, [esi]
+		mov al, [ebx]
 		cmp al,0
-		je koniec
+		je koniecstringa
+		inc ebx
 		inc ecx
-		inc esi
 		jmp lp
-	koniec:
-	;w ecx n
-	mov [ebp-4], ecx
-	;zarezerwuj 2*N*4 = 8*n = 2^3
-	shl ecx,3
-	push ecx
+
+	koniecstringa:
+	;ecx=n
+	mov ebx,ecx
+	push ebx
 	call _malloc
 	add esp,4
-	;eax adres docelowy
+	;eax - adres pamiec
 	cmp eax,0
-	je nie_udalo_sie_zarezerwowac_pamieci
-	mov edi, offset temp
+	je malloc_failed
+	;ebx n
+	push eax
+	;edi 
+	mov edi, [ebp+8]
 	mov esi, [ebp+8]
-	mov ecx, [ebp-4] ;ecx=n
-	add edi, ecx ;dodajemy do edi dlugosc tekstu aby zapisac go od rtylu
-	inc ecx
-	std ;set direction flag aby movsb zmniejszalo adresy
+
+	add edi, ebx ;dodaj n
+	dec edi
+	mov ecx, ebx
+	shr ecx,1 ;n/2
 	lp2:
-		sub ecx
-		movsb  
+		mov al, [edi]
+		cmp al,[esi]
+		jne koniec
+		dec edi
+		inc esi
 		loop lp2
 
+	;wrzuc do pamieci palindrom
+	pop edi
+	mov eax, edi
+	mov edx, [ebp+8]
+	mov [edi], edx
+	add eax,4
+	mov [eax], ebx
+	sub eax,4
+	jmp malloc_failed
+	koniec:
+	pop eax ;aders zapisu
+	malloc_failed:
 
-
-	nie_udalo_sie_zarezerwowac_pamieci:
-	add esp,4 ;nasz zmienna dynamiczna dla n usuwana
 	pop edi
 	pop esi
 	pop ebx
