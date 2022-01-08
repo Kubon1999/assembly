@@ -4,6 +4,8 @@ double ciag(unsigned int* x);
 float* XYZ2R(float* tablCIEXYZ, int n);
 char* spaces(char znak);
 void* palindrom(wchar_t* tekst);
+unsigned int NWD(unsigned int a, unsigned int b);
+float obj_stozka_sc(float r, float R, float h);
 int main()
 {
 	/* 
@@ -47,7 +49,16 @@ int main()
 	*/
 	//find all palindromes in text and safe its effective address and lengt
 	//returns address to table that contains: (address where starts the palindrome, length of palindrome)
-	int* wsk = palindrom("kajak");
+	//int* wsk = palindrom("kajak");
+
+	/* napiszac podprogram w asemblerze */
+	//nwd
+	//unsigned int w = NWD(28,35);
+	//printf("%d", w);
+
+	//
+	float w = obj_stozka_sc(5, 6, 7);
+	printf("%f", w);
 
 	return 0;
 }
