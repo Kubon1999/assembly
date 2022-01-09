@@ -56,9 +56,11 @@ int main()
 	//unsigned int w = NWD(28,35);
 	//printf("%d", w);
 
-	//
-	float w = obj_stozka_sc(5, 6, 7);
-	printf("%f", w);
+	//stozek sciesty
+	//float w = obj_stozka_sc(5, 6, 7);
+	//printf("%f", w);
+
+
 
 	return 0;
 }
