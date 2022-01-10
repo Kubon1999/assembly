@@ -17,7 +17,7 @@ _szybki_max PROC
 	finit
 	fld1
 	fld1
-	fsubp st(1),st(1)
+	;fsubp st(1),st(1)
 	movups xmm0, [eax]
 	movups xmm1, [ebx]
 
