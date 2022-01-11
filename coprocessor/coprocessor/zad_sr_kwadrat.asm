@@ -1,6 +1,9 @@
 .686
 .model flat
 public _sr_kwadrat
+.data
+	piec dd 5.0
+	siedem dd 7.0
 .code
 _sr_kwadrat PROC
 	push ebp
@@ -12,6 +15,14 @@ _sr_kwadrat PROC
 	;12 n
 
 	finit
+	fld dword ptr piec
+	fld dword ptr siedem
+	fsub ;st0 = st1 - st0
+	finit
+	fld1
+	fld1
+	fsub st(1),st(0)
+
 	mov ecx, [ebp+12]
 	mov esi, [ebp+8]
 	fldz
