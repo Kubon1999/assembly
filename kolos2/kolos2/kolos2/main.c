@@ -6,8 +6,13 @@ float obj_stozka_sc(float r, float R, float h);
 float half_to_float(float x); //powinno byc half x
 float uint48_float(float typuint48);//powienine byc uint48
 void aktualna_godzina(char* godzina);
+void aktualna_godzina2(char* godzina);
 wchar_t* zamien_na_base12(unsigned int liczba);
 float szereg(unsigned int n);
+float miesz2float(int liczba);
+float float_to_half(float l); //powinno zwraca  half
+char* druk_rozszerzony(char* druk);
+unsigned __int64 sortowanie_64bit(unsigned __int64* tab, unsigned int n);
 int main() {
 	/*
 	unsigned __int64 tab[4] = { 6,16,123,16 };
@@ -23,11 +28,21 @@ int main() {
 	/*float w = uint48_float(1.0);
 	printf("%f", w);*/
 	//char* godzina = "11";
-	//aktualna_godzina(&godzina);
+	//aktualna_godzina2(&godzina);
 	//printf("%s", godzina);
 	//wchar_t* w = zamien_na_base12(1234);
-	//printf("%s", w);
-	float w = szereg(4);
-	printf("%f", w);
+	//printf("%s", w);S
+	//float w = szereg(4);
+	//printf("%f", w);
+	//miesz2float(123);
+	//druk_rozszerzony("kuba");
+	//float_to_half(123.41);
+	unsigned __int64 tab[10] = { 15,14123,421,543,234,3454,3454,3454,123123123,123123 };
+	unsigned int n = 10;
+	sortowanie_64bit(tab, n);
+	for (int i = 0; i < n; i++) {
+		printf("\n%ld", tab[i]);
+	}
+
 	return 0;
 }
