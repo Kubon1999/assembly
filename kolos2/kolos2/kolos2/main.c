@@ -13,6 +13,7 @@ float miesz2float(int liczba);
 float float_to_half(float l); //powinno zwraca  half
 char* druk_rozszerzony(char* druk);
 unsigned __int64 sortowanie_64bit(unsigned __int64* tab, unsigned int n);
+void binarne_rozkazy();
 int main() {
 	/*
 	unsigned __int64 tab[4] = { 6,16,123,16 };
@@ -37,12 +38,12 @@ int main() {
 	//miesz2float(123);
 	//druk_rozszerzony("kuba");
 	//float_to_half(123.41);
-	unsigned __int64 tab[10] = { 15,14123,421,543,234,3454,3454,3454,123123123,123123 };
+	/*unsigned __int64 tab[10] = {15,14123,421,543,234,3454,3454,3454,123123123,123123};
 	unsigned int n = 10;
 	sortowanie_64bit(tab, n);
 	for (int i = 0; i < n; i++) {
 		printf("\n%ld", tab[i]);
-	}
-
+	}*/
+	binarne_rozkazy();
 	return 0;
 }
