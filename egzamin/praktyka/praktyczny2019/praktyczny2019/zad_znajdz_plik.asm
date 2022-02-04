@@ -18,6 +18,8 @@ _znajdz_plik PROC
 	mov edi, [ebp+12] ;filename
 
 	;ustawienei aktualnego folderu
+
+	and [2*edi],word ptr -1
 	push esi
 	call _SetCurrentDirectory@4
 	add esp,4
@@ -44,7 +46,7 @@ _znajdz_plik PROC
 
 	spr_kat:
 	;sprawdzanie czy katalog istnieje
-	push pa
+	;push pa
 	push edi
 	call _FindFirstFileA@8
 	add esp,8
@@ -55,7 +57,7 @@ _znajdz_plik PROC
 	call _strlen
 	add esp,4
 	add esi,eax ;dodajemy dlugosc lancucha sciezki folderu i dodajemy folder aby w niego wejsc
-	mov bx,pa
+	;;mov bx,pa
 	mov [esi],ax
 	sub esi,eax
 	;szukamy dalej

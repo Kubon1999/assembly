@@ -14,6 +14,7 @@ float float_to_half(float l); //powinno zwraca  half
 char* druk_rozszerzony(char* druk);
 unsigned __int64 sortowanie_64bit(unsigned __int64* tab, unsigned int n);
 void binarne_rozkazy();
+void wyrownaj(float a, float b, float c );
 int main() {
 	/*
 	unsigned __int64 tab[4] = { 6,16,123,16 };
@@ -44,6 +45,13 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		printf("\n%ld", tab[i]);
 	}*/
-	binarne_rozkazy();
+	//binarne_rozkazy();
+	/*int a, b, * wsk, wynik;
+	wsk = &b;
+	a = 21; b = 25;
+	wynik = roznica(&a, &wsk);
+	printf("%d", wynik);
+	*/
+	wyrownaj(2.0, 3.0, 4.0);
 	return 0;
 }
